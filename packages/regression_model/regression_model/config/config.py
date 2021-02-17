@@ -69,3 +69,5 @@ CATEGORICAL_NA_NOT_ALLOWED = [
 
 PIPELINE_NAME = 'lasso_regression'
 PIPELINE_SAVE_FILE = f'{PIPELINE_NAME}_output_v'
+
+#modifying to make this branch (update-regression-model) run in circleCI
