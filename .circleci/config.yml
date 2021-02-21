@@ -190,11 +190,11 @@ jobs:
     steps:
       - checkout
       - *prepare_venv
-#      - run:
-#          name: Install requirements
-#          command: |
-#            . venv/bin/activate
-#            pip install -r packages/neural_network_model/requirements.txt
+      - run:
+          name: Install requirements
+          command: |
+            . venv/bin/activate
+            pip install -r packages/neural_network_model/requirements.txt
 #      - run:
 #          name: Fetch Training data - 2GB
 #          command: |
