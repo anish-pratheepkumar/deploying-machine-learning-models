@@ -43,7 +43,7 @@ def cnn_model(kernel_size=(3, 3),
     model.add(Dense(12, activation="softmax"))
 
     model.compile(Adam(lr=0.0001),
-                  loss='binary_crossentropy',
+                  loss='categorical_crossentropy',
                   metrics=['accuracy'])
 
     return model
@@ -66,7 +66,7 @@ callbacks_list = [checkpoint, reduce_lr]
 
 cnn_clf = KerasClassifier(build_fn=cnn_model,
                           batch_size=config.BATCH_SIZE,
-                          validation_split=10,
+                          validation_split=0.10,
                           epochs=config.EPOCHS,
                           verbose=1,  # progress bar - required for CI job
                           callbacks=callbacks_list,
