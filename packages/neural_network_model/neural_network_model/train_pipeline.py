@@ -1,5 +1,5 @@
 import joblib
-
+import tensorflow
 from neural_network_model import pipeline as pipe
 from neural_network_model.config import config
 from neural_network_model.processing import data_management as dm
@@ -15,6 +15,11 @@ def run_training(save_result: bool = True):
     enc = pp.TargetEncoder()
     enc.fit(y_train)
     y_train = enc.transform(y_train)
+
+    confg = tensorflow.compat.v1.ConfigProto()
+    confg.gpu_options.allow_growth = True
+    sess = tensorflow.compat.v1.Session(config=config)
+    sess.as_default()
 
     pipe.pipe.fit(X_train, y_train)
 
