@@ -16,10 +16,10 @@ def run_training(save_result: bool = True):
     enc.fit(y_train)
     y_train = enc.transform(y_train)
 
-    confg = tensorflow.compat.v1.ConfigProto()
-    confg.gpu_options.allow_growth = True
-    sess = tensorflow.compat.v1.Session(config=confg)
-    sess.as_default()
+    #confg = tensorflow.compat.v1.ConfigProto()
+    #confg.gpu_options.allow_growth = True
+    #sess = tensorflow.compat.v1.Session(config=confg)
+    #sess.as_default()
 
     pipe.pipe.fit(X_train, y_train)
 
