@@ -15,7 +15,7 @@ def run_training(save_result: bool = True):
     enc = pp.TargetEncoder()
     enc.fit(y_train)
     y_train = enc.transform(y_train)
-
+    print(y_train.shape)
     pipe.pipe.fit(X_train, y_train)
 
     if save_result:
@@ -24,4 +24,4 @@ def run_training(save_result: bool = True):
 
 
 if __name__ == '__main__':
-    run_training(save_result=True)
+    run_training(save_result=False)
