@@ -22,7 +22,8 @@ class TargetEncoder(BaseEstimator, TransformerMixin):
 
 
 def _im_resize(df, n, image_size):
-    im = cv2.imread(r"df[n]")
+    print(df[n])
+    im = cv2.imread(df[n])
     im = cv2.resize(im, (image_size, image_size))
     return im
 
